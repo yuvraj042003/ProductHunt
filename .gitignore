@@ -1,0 +1,18 @@
+node_modules/
+dist/
+# Logs
+package-lock.json
+npm-debug.log*
+# Dependency directories
+.env
+# Build output
+coverage/
+# Miscellaneous
+.DS_Store
+# IDEs and editors
+.vscode/
+.idea/
+# Operating system files
+Thumbs.db
+# Temporary files
+*.tmp
