@@ -1,6 +1,8 @@
 import React, { useState }  from "react";
 import { Search, User } from "lucide-react";
 import RegisterLogin from "./Registerlogin";
+import Profile from "./Profile";
+import { Link } from "react-router-dom";
 const Headers = () => {
   const [showAuth, setShowAuth] = useState(false);
   return (
@@ -25,19 +27,19 @@ const Headers = () => {
       {/* Navigation Links */}
       <div className="flex items-center space-x-1">
         <div className="border border-gray-600 px-4 py-2">
-          <a href="#" className="hover:text-blue-400 transition-colors">
+          <Link to="/" className="hover:text-blue-400 transition-colors">
             Home
-          </a>
+          </Link>
         </div>
-        <div className="border border-gray-600 px-4 py-2">
-          <a href="#" className="hover:text-blue-400 transition-colors">
+          <div className="border border-gray-600 px-4 py-2">
+          <Link to="/under-construction" className="hover:text-blue-400 transition-colors">
             Product
-          </a>
+          </Link>
         </div>
         <div className="border border-gray-600 px-4 py-2">
-          <a href="#" className="hover:text-blue-400 transition-colors">
+           <Link to="/under-construction" className="hover:text-blue-400 transition-colors">
             About Us
-          </a>
+          </Link>
         </div>
         
         {/* Profile Icon */}
@@ -53,8 +55,8 @@ const Headers = () => {
      {showAuth && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="relative">
-            <RegisterLogin />
-
+            {/* <RegisterLogin /> */}
+            <Profile />
             {/* Close Button */}
             <button
               onClick={() => setShowAuth(false)}

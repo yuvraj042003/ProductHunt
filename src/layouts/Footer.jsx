@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MailboxIcon, Phone, Copyright } from 'lucide-react';
+import { MailboxIcon, Phone } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="flex items-center mb-2">
                         <MailboxIcon className="w-5 h-5 mr-2" />
                         <span>  
-                        info@company.com
+                        sales@kulp.ai
                         </span>
                     </div>
                     <div className="flex items-center">
@@ -19,21 +19,23 @@ const Footer = () => {
                         <span>+1 (555) 123-4567</span>
                     </div>
                 </div>
-                <div className="flex flex-col items-center md:items-end">
+                <div className="flex flex-col items-center md:items-center">
                     <h2 className="text-lg font-semibold mb-2">Quick Links</h2>
                     <nav className="flex space-x-4">
-                        <Link to="/" className="hover:text-blue-400 transition-colors">Home</Link>
-                        <Link to="/products" className="hover:text-blue-400 transition-colors">Products</Link>
-                        <Link to="/about" className="hover:text-blue-400 transition-colors">About Us</Link>
+                        <a href="#" className="text-gray-300 hover:text-white">Instagram</a>
+                        <a href="#" className="text-gray-300 hover:text-white">Facebook</a>
+                        <a href="#" className="text-gray-300 hover:text-white">Twitter</a>
+
                     </nav>
                 </div>
                 <div className="text-center mt-4 md:mt-0">
                     <p className="text-sm">
-                    Copyright 2023 Company Name. All rights reserved.
-                    </p>
-                    <p className="text-sm">
                     Yuvish Developer
                     </p>
+                    <p className="text-sm">
+                    Copyright &copy; 2025 Kulp.ai All rights reserved.
+                    </p>
+                    
                 </div>
             </div>
         </footer>

@@ -5,6 +5,8 @@ import Body from './layouts/Body';
 import ProductDetails from './pages/ProductDetails';
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
+import UpdateProfile from './layouts/UpdateProfile';
+import UnderConstruction from './layouts/UnderConstruction';
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Body />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/update-profile" element={<UpdateProfile />} />
+          <Route path="/under-construction" element={<UnderConstruction />} />
+
         </Routes>
       </main>
 

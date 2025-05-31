@@ -4,7 +4,7 @@ import { MessageSquare, ArrowUp, ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
 const ProductList = () => {
   return (
-    <div className="p-6 max-w-10xl mx-auto"> {/* ✅ Slightly increased max-width */}
+    <div className="p-6 max-w-10xl mt-30 mx-auto"> {/* ✅ Slightly increased max-width */}
   <h2 className="text-2xl font-semibold mb-4">Top Products Launching Today</h2>
   <div className="space-y-6">
     {products.map((product, index) => (
