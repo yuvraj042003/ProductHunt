@@ -1,15 +1,26 @@
-
-import './App.css'
+import './App.css';
+import Footer from './layouts/Footer';
+import Headers from './layouts/Header';
+import Body from './layouts/Body';
+import ProductDetails from './pages/ProductDetails';
+import { Routes, Route } from 'react-router-dom';
+import React from 'react';
 
 function App() {
- 
   return (
-    <>
-      <div className='text-[20px] text-center text-blue-500 font-bold'>
-        <h1>Welcome to My React App</h1>
-        </div>
-    </>
-  )
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Headers />
+
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
