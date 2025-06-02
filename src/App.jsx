@@ -42,7 +42,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/edit-product/:id" element={<EditProduct />} />
           <Route path="/delete-product/:id" element={<DeleteProductButton />} />
-          
+          {console.log("PROD flag:", import.meta.env.PROD)}
+{console.log("API Base URL:", import.meta.env.VITE_RENDER_API_BASE_URL)}
+
           {/* Add more routes as needed */}
         </Routes>
       </main>
