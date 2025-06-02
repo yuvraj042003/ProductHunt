@@ -17,8 +17,19 @@ import ProductBody from './layouts/Product/ProductBody';
 import Downvote from './layouts/Product/DownVote';
 import ProductDetail from './layouts/Product/ProductDetail';
 import EditProduct from './layouts/Product/EditProduct';
+import { useEffect } from 'react';
+
+import api from './lib/axios';
 
 function App() {
+  useEffect(() => {
+    async function keepRenderUp() {
+       setInterval(async () => {
+        await api.get(`${import.meta.env.VITE_RENDER_API_BASE_URL}/api/v1/keepingRenderUp`)
+      }, 14 * 60 * 1000); // Keeping the app alive on Render
+    }
+    keepRenderUp();
+  }, []);
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Headers />
