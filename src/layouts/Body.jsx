@@ -1,4 +1,4 @@
-import ProductList from "@/pages/ProductList";
+import ProductList from "../layouts/ProductList";
 import React from "react";
 
 const Body = () => {

@@ -1,10 +1,23 @@
-import React, { useState }  from "react";
+import React, { useEffect, useState }  from "react";
 import { Search, User } from "lucide-react";
-import RegisterLogin from "./Registerlogin";
-import Profile from "./Profile";
+import RegisterLogin from "./Auth/Registerlogin";
 import { Link } from "react-router-dom";
+import Profile from "./Auth/Profile";
+import ProductBody from "./Product/ProductBody";
+
+
+
 const Headers = () => {
   const [showAuth, setShowAuth] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+ 
+  useEffect(() => {
+    
+    const token = localStorage.getItem("token");
+   
+    setIsLoggedIn(!!token);
+   
+  }, [showAuth]);
   return (
     <>
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-gray-800 text-white border-b border-gray-400 w-full">
@@ -32,7 +45,7 @@ const Headers = () => {
           </Link>
         </div>
           <div className="border border-gray-600 px-4 py-2">
-          <Link to="/under-construction" className="hover:text-blue-400 transition-colors">
+          <Link to="/products" className="hover:text-blue-400 transition-colors">
             Product
           </Link>
         </div>
@@ -43,21 +56,19 @@ const Headers = () => {
         </div>
         
         {/* Profile Icon */}
-        <div
-              className="border border-gray-600 p-2"
-              onClick={() => setShowAuth(true)}
-            >
-              <User className="w-6 h-6 text-gray-300 hover:text-white cursor-pointer transition-colors" />
-          </div>
+         <div
+        className="border border-gray-600 p-2"
+        onClick={() => setShowAuth(true)}
+      >
+        <User className="w-6 h-6 text-gray-300 hover:text-white cursor-pointer transition-colors" />
+      </div>
       </div>
     </div>
-     </header>
-     {showAuth && (
+      </header>
+      {showAuth && (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
           <div className="relative">
-            {/* <RegisterLogin /> */}
-            <Profile />
-            {/* Close Button */}
+            {isLoggedIn ? <Profile /> : <RegisterLogin />}
             <button
               onClick={() => setShowAuth(false)}
               className="absolute top-2 right-2 text-white text-xl font-bold"
