@@ -63,8 +63,8 @@ const CommentSection = ({ product }) => {
 
   return (
     <CardContent className="space-y-4">
-      <h2 className="text-xl font-bold">💬 What do you think?</h2>
-      <CommentInput productId={product._id} onCommentSubmit={handleCommentSubmit} />
+      {/* <h2 className="text-xl font-bold">💬 What do you think?</h2>
+      <CommentInput productId={product._id} onCommentSubmit={handleCommentSubmit} /> */}
 
       {comments.length > 0 ? (
         <div className="space-y-4">
