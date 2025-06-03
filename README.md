@@ -1,20 +1,20 @@
 # 🚀 Product Hunt Clone
 
-A full-stack clone of [Product Hunt](https://www.producthunt.com/) where makers can launch their products and users can discover, upvote, and comment on them. Built using **Node.js**, **MongoDB**, and **Nuxt 3 (Vue 3)** for a sleek and modern experience.
+A full-stack clone of [Product Hunt](https://www.producthunt.com/) where makers can launch their products and users can discover, upvote, and comment on them. Built using **Node.js**, **MongoDB**, and **Vite React.js** for a sleek and modern experience.
 
 ---
 
 ## ✨ Featured In
 
-🌟 **Built with love by [Yuvraj Singh](https://github.com/yuvrajsingh2001)** — an aspiring Full Stack Developer passionate about crafting meaningful and intuitive user experiences.
+🌟 **Built with love by [Yuvraj Singh](https://github.com/yuvraj042003)** — an aspiring Full Stack Developer passionate about crafting meaningful and intuitive user experiences.
 
 ---
 
 ## 📸 Demo
 
-**Live Preview:** [Click Here to Explore 🚀](#)
+**Live Link:** [Click Here to Explore 🚀](#)
 
-![Demo Screenshot](https://your-demo-screenshot-link.com)
+![Demo Screenshot](https://product-hunt-coral.vercel.app/)
 
 ---
 
