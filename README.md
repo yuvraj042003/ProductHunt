@@ -9,14 +9,9 @@ A full-stack clone of [Product Hunt](https://www.producthunt.com/) where makers 
 🌟 **Built with love by [Yuvraj Singh](https://github.com/yuvraj042003)** — an aspiring Full Stack Developer passionate about crafting meaningful and intuitive user experiences.
 
 ---
-
-## 📸 Demo
-
-**Live Link:** [Click Here to Explore 🚀](#)
-
-![Demo Screenshot](https://product-hunt-coral.vercel.app/)
-
+Live Link: https://product-hunt-coral.vercel.app/
 ---
+
 
 ## 🧠 Features
 
