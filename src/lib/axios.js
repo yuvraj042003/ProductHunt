@@ -1,18 +1,11 @@
 import axios from "axios";
 
-console.log('====================================');
-console.log(import.meta.env.PROD);
-console.log('====================================');
 const BASE_URL = import.meta.env.PROD
   ? import.meta.env.VITE_RENDER_API_BASE_URL
   : "http://localhost:3030";
 
 
-// Ensure the environment variable is set correctly
-if (!BASE_URL) {
-  console.error("Base URL is not defined. Please check your environment variables.");
-  throw new Error("Base URL is not defined. Please check your environment variables.");
-} 
+
 const api = axios.create({
   baseURL: BASE_URL,
   withCredentials: true,

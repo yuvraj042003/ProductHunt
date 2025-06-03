@@ -13,13 +13,13 @@ const Headers = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Check login status
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, [showAuth]);
 
-  // Fetch all products once
+
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
@@ -31,8 +31,7 @@ const Headers = () => {
         }
         
         const data = await res.json();
-        
-        // Handle different possible response structures
+     
         let products = [];
         if (Array.isArray(data)) {
           products = data;
@@ -43,7 +42,7 @@ const Headers = () => {
         } else if (data.result && Array.isArray(data.result)) {
           products = data.result;
         } else {
-          // Try to find any array in the response
+       
           for (const key in data) {
             if (Array.isArray(data[key])) {
               products = data[key];
@@ -52,8 +51,6 @@ const Headers = () => {
           }
         }
         
-        // If no products from API, you can remove this mock data section
-        // once your real API is working
         if (products.length === 0) {
           // Temporary mock data - remove this when your API works
           products = [
@@ -96,14 +93,12 @@ const Headers = () => {
         try {
           const searchTerm = query.toLowerCase();
           const filtered = allProducts.filter(product => {
-            // Handle different possible product structures and search in multiple fields
             const productName = (product.name || product.title || product.productName || '').toLowerCase();
             const productDescription = (product.description || product.desc || '').toLowerCase();
             const productCategory = (product.category || product.categories || '').toLowerCase();
             const productBrand = (product.brand || product.manufacturer || '').toLowerCase();
             const productTags = Array.isArray(product.tags) ? product.tags.join(' ').toLowerCase() : '';
             
-            // Search in multiple fields for better results
             return productName.includes(searchTerm) || 
                    productDescription.includes(searchTerm) ||
                    productCategory.includes(searchTerm) ||
@@ -124,7 +119,6 @@ const Headers = () => {
     return () => clearTimeout(delayDebounce);
   }, [query, allProducts]);
 
-  // Handle suggestion click
   const handleSuggestionClick = (product) => {
     try {
       const productId = product._id || product.id;
@@ -140,19 +134,17 @@ const Headers = () => {
     }
   };
 
-  // Handle search input change
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
   };
 
-  // Handle search form submission
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (query.trim() && suggestions.length > 0) {
-      // Navigate to first suggestion if available
+   
       handleSuggestionClick(suggestions[0]);
     } else if (query.trim()) {
-      // Navigate to products page with search filter
+     
       navigate(`/products?search=${encodeURIComponent(query.trim())}`);
       setQuery('');
       setSuggestions([]);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+
 import { ArrowBigUp, Check } from 'lucide-react';
+import api from '../../lib/axios';
 
 const UpvoteButton = ({ productId, initialUpvoteCount = 0, onUpvoteChange }) => {
   const [upvoteCount, setUpvoteCount] = useState(initialUpvoteCount);
@@ -17,7 +18,7 @@ const UpvoteButton = ({ productId, initialUpvoteCount = 0, onUpvoteChange }) => 
     try {
       setIsLoading(true);
 
-      const response = await axios.post(
+      const response = await api.post(
         `/api/v1/product/${productId}/upvote`,
         {},
         {

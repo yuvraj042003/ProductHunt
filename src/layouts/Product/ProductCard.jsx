@@ -63,7 +63,7 @@ const ProductCard = ({ product }) => (
     )}
 
     </div>
-    {/* Right Section: Upvotes, Comments, Downvotes */}
+     {/* Right Section: Upvotes, Comments, Downvotes  */}
     <div className="flex flex-col items-center justify-center ml-4 space-y-2">
       <div className="flex flex-col items-center">
         <UpvoteButton productId={product._id} />
