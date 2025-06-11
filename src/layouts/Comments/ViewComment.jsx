@@ -3,10 +3,14 @@ import CommentInput from './CreateComment';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 
+
+
 const CommentItem = ({ comment, onReply, onEdit, onDelete, productId }) => {
   const [showReply, setShowReply] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editContent, setEditContent] = useState(comment.content);
+  
+  
 
   return (
     <div className="border rounded p-3 space-y-2">
@@ -55,5 +59,6 @@ const CommentItem = ({ comment, onReply, onEdit, onDelete, productId }) => {
     </div>
   );
 };
+
 
 export default CommentItem;

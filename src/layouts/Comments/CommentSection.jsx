@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { CardContent } from "@/components/ui/card";
 import CommentInput from "./CreateComment";
-import CommentItem from "./ViewComment"; // Assuming this component exists and handles displaying a single comment
+import CommentItem from "./ViewComment"; 
 import api from "../../lib/axios";
 import { toast } from "react-hot-toast";
 
@@ -23,27 +23,27 @@ const CommentSection = ({ product }) => {
       console.error("Error fetching comments:", err);
       toast.error("Failed to load comments");
     }
-  }, [product?._id]); // Add product?._id to dependency array
+  }, [product?._id]);
 
   useEffect(() => {
     fetchComments();
-  }, [fetchComments]); // Dependency array includes memoized fetchComments
+  }, [fetchComments]); 
 
   const handleCommentSubmit = async () => {
-    // After a new comment is submitted, refetch comments to update the list
+      
     await fetchComments();
   };
 
   const handleReply = async () => {
-    // After a reply is submitted, refetch comments to update the list
+   
     await fetchComments();
   };
 
   const handleEdit = async (commentId, newContent) => {
     try {
-      await api.patch(`/api/v1/comment/edit-comment/${commentId}`, { content: newContent }); // Added API prefix
+      await api.patch(`/api/v1/comment/edit-comment/${commentId}`, { content: newContent }); 
       toast.success("Comment updated successfully!");
-      fetchComments(); // Refetch comments after successful edit
+      fetchComments(); 
     } catch (err) {
       console.error("Error editing comment:", err);
       toast.error(err.response?.data?.error || "Failed to edit comment");
@@ -63,9 +63,8 @@ const CommentSection = ({ product }) => {
 
   return (
     <CardContent className="space-y-4">
-      {/* <h2 className="text-xl font-bold">💬 What do you think?</h2>
-      <CommentInput productId={product._id} onCommentSubmit={handleCommentSubmit} /> */}
-
+      <h2 className="text-xl font-bold">💬 What do you think?</h2>
+      <CommentInput productId={product._id} onCommentSubmit={handleCommentSubmit} />
       {comments.length > 0 ? (
         <div className="space-y-4">
           {comments.map((comment) => (
@@ -75,7 +74,7 @@ const CommentSection = ({ product }) => {
               onReply={handleReply}
               onEdit={handleEdit}
               onDelete={handleDelete}
-              currentUserId={product.currentUserId} // Pass current user ID if needed for edit/delete permissions in CommentItem
+              currentUserId={product.currentUserId} 
             />
           ))}
         </div>
